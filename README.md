@@ -1,25 +1,25 @@
 # Scout: *Leveraging Large Language Models for Rapid Digital Evidence Discovery*
 
-[cite\_start]Inspired by the research paper **"Scout: Leveraging Large Language Models for Rapid Digital Evidence Discovery"**[cite: 1], this tool is a practical implementation of the concepts presented. [cite\_start]It aims to assist digital forensics investigators by using Large Language Models (LLMs) to perform preliminary evidence processing and prioritization, significantly reducing the time and effort required to sift through large volumes of data[cite: 6, 8].
+This tool aims to assist digital forensics investigators by using Large Language Models (LLMs) to perform preliminary evidence processing and prioritization, significantly reducing the time and effort required to sift through large volumes of data.
 
 -----
 
 ## 🔍 Overview
 
-In modern legal investigations, the volume of digital evidence is exploding. [cite\_start]Forensic investigators are often tasked with analyzing gigabytes or even terabytes of data from various sources like disk images, memory dumps, and network captures[cite: 6]. [cite\_start]This process is tedious and can lead to significant delays in the justice system[cite: 27].
+In modern legal investigations, the volume of digital evidence is exploding. Forensic investigators are often tasked with analyzing gigabytes or even terabytes of data from various sources like disk images, memory dumps, and network captures. This process is tedious and can lead to significant delays in the justice system.
 
-**Scout** is a framework designed to address this challenge. [cite\_start]It employs foundational language models to analyze and identify relevant artifacts from a vast pool of potential evidence[cite: 9, 77]. [cite\_start]By automating the initial analysis, Scout helps investigators to prioritize their efforts on the most promising pieces of evidence, accelerating the discovery process[cite: 8].
+**Scout** is a framework designed to address this challenge. It employs foundational language models to analyze and identify relevant artifacts from a vast pool of potential evidence. By automating the initial analysis, Scout helps investigators to prioritize their efforts on the most promising pieces of evidence, accelerating the discovery process.
 
 ## ✨ Features
 
-  - [cite\_start]**🧠 Intelligent Analysis**: Utilizes LLMs to understand the content and context of evidence files, identifying potential artifacts of interest[cite: 9, 77].
+  - **🧠 Intelligent Analysis**: Utilizes LLMs to understand the content and context of evidence files, identifying potential artifacts of interest.
   - **📂 Multi-Format Support**: Capable of processing various evidence types, including:
-      - [cite\_start]**Text-based files**: Emails, documents, logs, and other textual data[cite: 10, 83].
-      - [cite\_start]**Network Captures**: Analyzes PCAP files to identify suspicious network activity[cite: 174].
-      - [cite\_start]**Multimedia Files**: Can be extended to analyze images, audio, and video files using multimodal models[cite: 11, 83, 215].
-  - [cite\_start]**📝 Automated Reporting**: Generates a detailed report of the analysis, summarizing the findings and highlighting key evidence[cite: 63, 80].
-  - [cite\_start]**🔒 Offline & Secure**: Designed to run in a completely offline, on-premises environment, ensuring the integrity and confidentiality of the evidence[cite: 82, 306]. [cite\_start]Scout operates in a read-only mode to prevent any tampering[cite: 307].
-  - [cite\_start]**🧩 Extensible Architecture**: The modular design allows for easy extension with new analysis tools and plugins to support additional file types[cite: 84].
+      - **Text-based files**: Emails, documents, logs, and other textual data.
+      - **Network Captures**: Analyzes PCAP files to identify suspicious network activity.
+      - **Multimedia Files**: Can be extended to analyze images, audio, and video files using multimodal models.
+  - **📝 Automated Reporting**: Generates a detailed report of the analysis, summarizing the findings and highlighting key evidence.
+  - **🔒 Offline & Secure**: Designed to run in a completely offline, on-premises environment, ensuring the integrity and confidentiality of the evidence. Scout operates in a read-only mode to prevent any tampering.
+  - **🧩 Extensible Architecture**: The modular design allows for easy extension with new analysis tools and plugins to support additional file types.
 
 ## 🏗️ Architecture
 
