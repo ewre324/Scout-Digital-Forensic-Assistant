@@ -1,10 +1,4 @@
-# Scout: A Digital Forensics Tool
-
-\<p align="center"\>
-\<img src="[https://storage.googleapis.com/deforum/scout\_logo.png](https://www.google.com/search?q=https://storage.googleapis.com/deforum/scout_logo.png)" width="500"\>
-\</p\>
-
-> *Leveraging Large Language Models for Rapid Digital Evidence Discovery*
+# Scout: *Leveraging Large Language Models for Rapid Digital Evidence Discovery*
 
 [cite\_start]Inspired by the research paper **"Scout: Leveraging Large Language Models for Rapid Digital Evidence Discovery"**[cite: 1], this tool is a practical implementation of the concepts presented. [cite\_start]It aims to assist digital forensics investigators by using Large Language Models (LLMs) to perform preliminary evidence processing and prioritization, significantly reducing the time and effort required to sift through large volumes of data[cite: 6, 8].
 
