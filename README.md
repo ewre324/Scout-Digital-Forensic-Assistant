@@ -79,7 +79,7 @@ scout/
 1.  **Clone the repository:**
 
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/ewre324/Scout-Digital-Forensic-Assistant/
     cd scout
     ```
 
@@ -89,13 +89,7 @@ scout/
     pip install -r requirements.txt
     ```
 
-    The `requirements.txt` file contains:
-
-    ```
-    ollama
-    colorama
-    tiktoken
-    ```
+    
 
 ### Usage
 
@@ -104,7 +98,7 @@ The primary way to run Scout is through the `run.py` script. You need to provide
 #### Basic Command
 
 ```bash
-python run.py -e <path_to_evidence_file>
+python run.py -e <path_to_evidence_file> --llm-model
 ```
 
 #### Command Options
@@ -138,6 +132,6 @@ python run.py -e <path_to_evidence_file>
 
 Scout is intended for **educational and research purposes only**. It is a prototype implementation and should be used as a preliminary analysis tool to assist, not replace, a qualified forensic investigator. Always obtain proper authorization before analyzing any system or data. The authors are not responsible for any misuse of this tool.
 
-## 🙏 Acknowledgments
+## Citation
 
-[cite\_start]This project is directly inspired by the research and concepts presented in the paper **"Scout: Leveraging Large Language Models for Rapid Digital Evidence Discovery"**[cite: 1, 322]. The goal of this implementation is to provide a practical tool that embodies the principles of the paper and encourages further research in the application of AI in digital forensics.
+Please cite  **"Scout: Leveraging Large Language Models for Rapid Digital Evidence Discovery"**
