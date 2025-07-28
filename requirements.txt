@@ -1,3 +1,6 @@
 ollama
 colorama
 tiktoken
+pandas
+scikit-learn
+tabulate

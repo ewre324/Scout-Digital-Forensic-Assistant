@@ -10,17 +10,18 @@ class Summarizer:
         conversation_str = "\n".join([f"{msg['role']}: {msg['content']}" for msg in conversation])
         
         prompt = f"""
-        You are a summarizer agent. Your job is to summarize the following conversation from a digital forensics investigation:
+        You are a summarizer agent for a digital forensics investigation. Your task is to summarize the following conversation, focusing on the key technical details and findings.
+
+        **Conversation:**
 
         {conversation_str}
 
-        Please provide a bullet point summary that includes:
-        - What evidence was examined
-        - What tools were used
-        - What the key findings were
-        - Any hypotheses that were formed
+        **Summary Requirements:**
 
-        Keep the summary focused on the technical details and actions taken.
+        * Provide a bullet-point summary.
+        * Include details on the evidence examined, tools used, and key findings.
+        * Mention any hypotheses that were formed or discarded.
+        * Focus on the technical aspects of the analysis.
         """
 
         output = self.llm.prompt(prompt)
