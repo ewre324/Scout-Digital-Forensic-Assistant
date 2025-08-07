@@ -1,6 +1,7 @@
 import os
 import argparse
 from core.agent import Agent
+from core.llm import LLM
 from utils.logger import logger
 from colorama import Fore, Style
 
@@ -36,7 +37,7 @@ class ScoutApp:
         """
         self.evidence_file = evidence_file
         self.max_iterations = max_iterations
-        self.llm_model = llm_model
+        self.llm = LLM(model=llm_model)
         self.keep_history = keep_history
         
         if not os.path.exists(evidence_file):
@@ -48,7 +49,12 @@ class ScoutApp:
 
     def run(self):
         """Run the analysis on the target evidence file."""
-        self.agent = Agent(self.evidence_file, self.file_contents, llm_model=self.llm_model, keep_history=self.keep_history)
+        self.agent = Agent(
+            llm=self.llm,
+            file=self.evidence_file,
+            initial_data=self.file_contents,
+            keep_history=self.keep_history
+        )
         logger.info(f"{Fore.WHITE}Starting evidence analysis...{Style.RESET_ALL}")
         self.agent.run()
 

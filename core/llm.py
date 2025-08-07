@@ -1,14 +1,59 @@
-# scout/reporter.py
+# scout/core/llm.py
+import ollama
+from typing import Dict, List
 import os
-from llm import LLM
-from pathlib import Path
 from tabulate import tabulate
 import pandas as pd
 from sklearn.metrics import precision_score, recall_score, f1_score
 
+class LLM:
+    def __init__(self, model: str = "llama3"):
+        """Initialize LLM with the specified Ollama model."""
+        self.client = ollama
+        self.model = model
+
+    def action(self, messages: List[Dict[str, str]], temperature: float = 0.0) -> str:
+        """
+        Sends a chat request to the local Ollama model.
+        """
+        response = self.client.chat(
+            model=self.model,
+            messages=messages,
+            options={
+                "temperature": temperature
+            }
+        )
+        return response['message']['content']
+
+class Summarizer:
+    def __init__(self, llm: LLM) -> None:
+        self.llm = llm
+
+    def summarize_conversation(self, conversation: List[Dict[str, str]]) -> str:
+        conversation_str = "\n".join([f"{msg['role']}: {msg['content']}" for msg in conversation])
+
+        prompt = f"""
+        You are a summarizer agent for a digital forensics investigation. Your task is to summarize the following conversation, focusing on the key technical details and findings.
+
+        **Conversation:**
+
+        {conversation_str}
+
+        **Summary Requirements:**
+
+        * Provide a bullet-point summary.
+        * Include details on the evidence examined, tools used, and key findings.
+        * Mention any hypotheses that were formed or discarded.
+        * Focus on the technical aspects of the analysis.
+        """
+
+        messages = [{"role": "user", "content": prompt}]
+        output = self.llm.action(messages)
+        return "To reduce context, here is a summary of the previous part of the conversation:\n" + output
+
 class Reporter:
-    def __init__(self, filename, llm_model: str = "o3-mini"):
-        self.llm = LLM(llm_model)
+    def __init__(self, llm: LLM, filename):
+        self.llm = llm
         self.filename = filename
         
     def generate_summary_report(self, history, ground_truth=None, predictions=None):

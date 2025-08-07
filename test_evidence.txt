@@ -1,0 +1,6 @@
+This is a test file.
+It contains some strings that the agent can analyze.
+The agent should be able to identify this as a text file and suggest using the 'strings' command.
+This file also contains an email address: test@example.com
+And a domain name: example.com
+And a suspicious string: Y29uZ3JhdHVsYXRpb25zLCB5b3UndmUgZGVjb2RlZCB0aGUgYmFzZTY0IHN0cmluZy4=
